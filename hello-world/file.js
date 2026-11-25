@@ -23,7 +23,18 @@ const fs = require("fs")
 
 // fs.appendFileSync("./test.txt", `$(Date.now()) - hey there\n`);
 
+// copy the text file content
+// fs.cpSync("./test.txt", "./backup.txt")
 
+// delete the file
+// fs.unlinkSync("./test.txt")
+
+
+// console.log(fs.statSync("./contacts.txt"))
+
+
+// folder create
+// fs.mkdirSync("my-dir")
 
 
 
