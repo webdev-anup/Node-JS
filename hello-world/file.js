@@ -5,12 +5,38 @@ const fs = require("fs")
 
 
 // async
-// fs.writeFile('./test.txt', 'hey there Async!', (err) => {});
+// fs.writeFile('./test.txt', 'hey there Async!', (err) => {
 
 
 
 // const result = fs.readFileSync('./contacts.txt', 'utf8');
 // console.log(result)
+
+// fs.readFile("./contacts.txt", "utf8", (err, result) => {
+//   if (err) {
+//     console.error("Error", err);
+//   } else {
+//     console.log(result);
+//   }
+// });
+
+
+fs.appendFileSync("./test.txt", `$(Date.now()) - hey there\n`);
+
+
+// copy the text file content
+// fs.cpSync("./test.txt", "./backup.txt")
+
+// delete the file
+// fs.unlinkSync("./test.txt")
+
+
+// console.log(fs.statSync("./contacts.txt"))
+
+
+// folder create
+// fs.mkdirSync("my-dir")
+
 
 
 
