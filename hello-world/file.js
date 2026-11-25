@@ -10,7 +10,7 @@ const fs = require("fs")
 
 
 // const result = fs.readFileSync('./contacts.txt', 'utf8');
-// console.log(result);
+// console.log(result)
 
 
 
