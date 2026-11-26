@@ -21,8 +21,7 @@ const fs = require("fs")
 // });
 
 
-fs.appendFileSync("./test.txt", `$(Date.now()) - hey there\n`);
-
+// fs.appendFileSync("./test.txt", `$(Date.now()) - hey there\n`);
 
 // copy the text file content
 // fs.cpSync("./test.txt", "./backup.txt")
@@ -36,6 +35,22 @@ fs.appendFileSync("./test.txt", `$(Date.now()) - hey there\n`);
 
 // folder create
 // fs.mkdirSync("my-dir")
+
+
+
+
+// diff between this two
+// Synchronous --
+// Blocks execution until complete
+// Simple to understand
+// Can cause delays
+// Uses functions like readFileSync
+
+// Asynchronous --
+// Non-blocking execution
+// Better performance
+// More complex to handle
+// Uses callbacks, promises, or async/await
 
 
 
