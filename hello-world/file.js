@@ -41,3 +41,19 @@ fs.appendFileSync("./test.txt", `$(Date.now()) - hey there\n`);
 
 
 
+// diff between this two
+// Synchronous --
+// Blocks execution until complete
+// Simple to understand
+// Can cause delays
+// Uses functions like readFileSync
+
+// Asynchronous --
+// Non-blocking execution
+// Better performance
+// More complex to handle
+// Uses callbacks, promises, or async/await
+
+
+
+
