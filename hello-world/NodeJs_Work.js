@@ -21,3 +21,11 @@ console.log("2")
 
 // default thread pool size = 4
 // Max? - 8core cpu - 8
+
+
+Node.js is particularly well-suited for:
+
+I/O-bound applications - File operations, database queries, network requests
+Real-time applications - Chat apps, live notifications, collaboration tools
+APIs - RESTful services, GraphQL APIs
+Microservices - Small, independent services
