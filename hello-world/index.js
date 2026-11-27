@@ -26,8 +26,8 @@ myServer.listen(8000, () => console.log("Server is listening"));
 
 //1 http.createServer() - Creates a new HTTP server instance
 //2 The callback function is executed for each request with two parameters:
-//3 req - The request object (http.IncomingMessage)
-//4 res - The response object (http.ServerResponse)
+//    * req - The request object (http.IncomingMessage)
+//    * res - The response object (http.ServerResponse)
 //5 res.writeHead() - Sets the response status code and headers
 //6 res.end() - Sends the response and ends the connection
 //7 server.listen() - Starts the server on the specified port
