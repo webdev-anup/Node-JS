@@ -20,7 +20,6 @@ const myServer = http.createServer((req, res) => {
   // pathname: The path section of the URL
   // search: The query string including the leading ?
   // query: Either the query string without the ?, or a parsed query object
-  // hash: The fragment identifier including the #
 
 
   
