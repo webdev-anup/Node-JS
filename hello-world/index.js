@@ -12,7 +12,7 @@ const myServer = http.createServer((req, res) => {
 
   // Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:
   // URL Parsing and Formatting
-  href: The full URL that was parsed
+  // href: The full URL that was parsed
   // protocol: The protocol scheme (e.g., 'http:')
   // host: The full host portion (e.g., 'example.com:8080')
   // hostname: The hostname portion (e.g., 'example.com')
@@ -23,13 +23,14 @@ const myServer = http.createServer((req, res) => {
 
 
   
-
-  const myUrl = url.parse(req.url, true);
+const myUrl = url.parse(req.url, true);
   console.log(myUrl);
   fs.appendFile("log.txt", log, (err, data) => {
     switch (myUrl.pathname) {
       case "/":
-        res.end("Home Page");
+        if (req.method === "GET") {
+          res.end("Home Page");
+        }
         break;
       case "/about":
         const username = myUrl.query.myName;
@@ -38,6 +39,14 @@ const myServer = http.createServer((req, res) => {
       case "/search":
         const search = myUrl.query.search_query;
         res.end(`You searched for: ${search}`);
+        break;
+      case "/signup":
+        if (req.method === "GET") {
+          res.end("this is the signup page");
+        } else if (req.method === "POST") {
+          // DB Query
+          res.end("Signup successful!");
+        }
         break;
       default:
         res.end("404 - Page Not Found");
