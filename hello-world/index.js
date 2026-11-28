@@ -9,6 +9,9 @@ const myServer = http.createServer((req, res) => {
   }
 
   const log = `${Date.now()}: New Req Received\n`;
+
+  // Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:
+
   const myUrl = url.parse(req.url, true);
   console.log(myUrl);
   fs.appendFile("log.txt", log, (err, data) => {
