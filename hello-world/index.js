@@ -1,43 +1,33 @@
 const http = require("http");
 const fs = require("fs");
+const url = require("url");
 
 const myServer = http.createServer((req, res) => {
-    const log = `${Date.now()}: New Req Received\n`
-    fs.appendFile("log.txt", log, (err, data) => {
-        switch (req.url) {
-            case "/":
-                res.end("Home Page");
-                break;
-            case "/about":
-                res.end("I am a Anup Patwa");
-                break;
-            default:
-                res.end("404 - Page Not Found");
-        }
-    });
+  if (req.url === "/.favicon.ico") {
+    res.end();
+    return;
+  }
+
+  const log = `${Date.now()}: New Req Received\n`;
+  const myUrl = url.parse(req.url, true);
+  console.log(myUrl);
+  fs.appendFile("log.txt", log, (err, data) => {
+    switch (myUrl.pathname) {
+      case "/":
+        res.end("Home Page");
+        break;
+      case "/about":
+        const username = myUrl.query.myName;
+        res.end(`hi, ${username}!`);
+        break;
+      case "/search":
+        const search = myUrl.query.search_query;
+        res.end(`You searched for: ${search}`);
+        break;
+      default:
+        res.end("404 - Page Not Found");
+    }
+  });
 });
 
 myServer.listen(8000, () => console.log("Server is listening"));
-
-
-
-
-// Understanding the Code
-
-//1 http.createServer() - Creates a new HTTP server instance
-//2 The callback function is executed for each request with two parameters:
-//    * req - The request object (http.IncomingMessage)
-//    * res - The response object (http.ServerResponse)
-//5 res.writeHead() - Sets the response status code and headers
-//6 res.end() - Sends the response and ends the connection
-//7 server.listen() - Starts the server on the specified port
-
-
-
-
-
-
-
-
-
-
